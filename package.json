@@ -1,41 +1,47 @@
 {
   "name": "trmnl",
-  "displayName": "TRmnl",
-  "description": "Live terminal translation for high-speed prompting.",
-  "version": "0.1.0",
-  "publisher": "vauugnn",
-  "engines": {
-    "vscode": "^1.80.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "main": "./extension.js",
+  "version": "1.0.0",
+  "description": "Interactive terminal translator powered by DeepL. Type text, get translations, auto-copied to clipboard.",
   "bin": {
-    "trmnl": "./trmnl_engine.js"
+    "trmnl": "bin/trmnl.js"
   },
   "scripts": {
-    "test": "node trmnl_engine.js 'hello world'"
+    "start": "node bin/trmnl.js"
   },
+  "keywords": [
+    "translate",
+    "translation",
+    "cli",
+    "deepl",
+    "terminal",
+    "repl",
+    "chinese",
+    "japanese",
+    "korean",
+    "clipboard"
+  ],
+  "author": "vauugnn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vauugnn/TRmnl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vauugnn/TRmnl/issues"
+  },
+  "homepage": "https://github.com/vauugnn/TRmnl#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
-    "deepl-node": "^1.24.0",
-    "dotenv": "^17.2.4"
-  },
-  "contributes": {
-    "commands": [
-      {
-        "command": "trmnl.toggle",
-        "title": "TRmnl: Toggle Translation Mode"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "trmnl.toggle",
-        "key": "cmd+alt+t",
-        "mac": "cmd+alt+t",
-        "win": "ctrl+alt+t",
-        "when": "terminalFocus"
-      }
-    ]
+    "chalk": "^4.1.2",
+    "clipboardy": "^2.3.0",
+    "deepl-node": "^1.24.0"
   }
 }

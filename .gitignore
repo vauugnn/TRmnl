@@ -1,0 +1,5 @@
+# Dependencies
+node_modules/
+
+# Security: Never commit your API keys
+.env

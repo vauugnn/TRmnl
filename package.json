@@ -1,0 +1,41 @@
+{
+  "name": "trmnl",
+  "displayName": "TRmnl",
+  "description": "Live terminal translation for high-speed prompting.",
+  "version": "0.1.0",
+  "publisher": "vauugnn",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "bin": {
+    "trmnl": "./trmnl_engine.js"
+  },
+  "scripts": {
+    "test": "node trmnl_engine.js 'hello world'"
+  },
+  "dependencies": {
+    "deepl-node": "^1.24.0",
+    "dotenv": "^17.2.4"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "trmnl.toggle",
+        "title": "TRmnl: Toggle Translation Mode"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "trmnl.toggle",
+        "key": "cmd+alt+t",
+        "mac": "cmd+alt+t",
+        "win": "ctrl+alt+t",
+        "when": "terminalFocus"
+      }
+    ]
+  }
+}

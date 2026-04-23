@@ -1,7 +1,7 @@
 {
   "name": "trmnl",
-  "version": "1.0.0",
-  "description": "Interactive terminal translator powered by DeepL. Type text, get translations, auto-copied to clipboard.",
+  "version": "1.2.0",
+  "description": "DeepL-powered terminal translator. Runs standalone as a REPL and as a Claude Code plugin (slash commands + auto-translate hook).",
   "bin": {
     "trmnl": "bin/trmnl.js"
   },
@@ -18,7 +18,9 @@
     "chinese",
     "japanese",
     "korean",
-    "clipboard"
+    "clipboard",
+    "claude-code",
+    "claude-code-plugin"
   ],
   "author": "vauugnn",
   "license": "MIT",
@@ -36,6 +38,10 @@
   "files": [
     "bin/",
     "lib/",
+    ".claude-plugin/",
+    "commands/",
+    "hooks/",
+    "scripts/",
     "README.md",
     "LICENSE"
   ],

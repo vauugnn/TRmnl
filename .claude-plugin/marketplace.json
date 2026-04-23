@@ -1,0 +1,11 @@
+{
+  "name": "trmnl",
+  "owner": { "name": "vauugnn" },
+  "plugins": [
+    {
+      "name": "trmnl",
+      "source": "./",
+      "description": "DeepL-powered prompt translator. /trmnl for on-demand, >> prefix for auto-translate."
+    }
+  ]
+}

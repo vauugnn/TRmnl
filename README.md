@@ -51,6 +51,66 @@ $ trmnl
 | `trmnl --setup` | Reconfigure API key |
 | `trmnl --help` | Show help |
 
+## Claude Code plugin
+
+TRmnl also ships as a Claude Code plugin. Write prompts in English, Claude receives Chinese — fewer input tokens, same result.
+
+### Install
+
+```
+/plugin marketplace add github:vauugnn/TRmnl
+/plugin install trmnl@trmnl
+```
+
+After installing, set your DeepL API key:
+
+```
+/plugin config trmnl
+```
+
+No CLI needed. If you already have `~/.config/trmnl/config.json` from the REPL, the plugin picks it up automatically.
+
+### Slash commands
+
+| Command | What it does |
+|---|---|
+| `/tr <text>` | Translate text and submit as prompt. Claude only sees the translation — true token savings. |
+| `/trmnl <text>` | Same as `/tr`. |
+| `/tr-lang <code>` | Set default target language (e.g. `/tr-lang ja`). |
+| `/trmnl-lang <code>` | Same as `/tr-lang`. |
+
+### Auto-translate hook
+
+Prefix any prompt with `>>` to auto-translate before Claude processes it:
+
+```
+>> explain closures in JavaScript
+```
+
+The hook appends the Chinese translation as context. Claude reads the translation, responds in your configured `responseLang` (default: English).
+
+> **Note:** Claude Code hooks can only append context, not replace the prompt. Both the original English and the translation reach the model. `/tr` is the only path where Claude sees *only* the translation.
+
+### Plugin settings
+
+Set via `/plugin config trmnl`:
+
+| Key | Default | Description |
+|---|---|---|
+| `apiKey` | — | DeepL API key (stored in system keychain) |
+| `targetLang` | `zh` | DeepL target code (`zh`, `ja`, `de`, …) |
+| `responseLang` | `English` | Language Claude replies in |
+| `autoPrefix` | `>>` | Hook trigger prefix. Empty string disables. |
+| `hookTimeoutMs` | `2000` | Max ms to wait for DeepL before passing through untranslated |
+
+### Failure handling
+
+Missing key, DeepL error, or timeout → prompt passes through untouched. The hook never blocks.
+
+### Optional keybinding
+
+Plugins can't ship keybindings, but add one in `~/.claude/keybindings.json` to insert `/tr ` on a keypress.
+
 ## License
 
 MIT

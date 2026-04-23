@@ -1,0 +1,41 @@
+{
+  "name": "trmnl",
+  "version": "1.2.0",
+  "description": "DeepL-powered prompt translator. /trmnl for on-demand translation; >> prefix auto-translates via UserPromptSubmit hook.",
+  "author": { "name": "vauugnn" },
+  "homepage": "https://github.com/vauugnn/TRmnl",
+  "commands": "./commands",
+  "hooks": "./hooks/hooks.json",
+  "userConfig": {
+    "apiKey": {
+      "type": "string",
+      "title": "DeepL API key",
+      "description": "Your DeepL API key (free tier at deepl.com/your-account/keys). Stored securely in the system keychain. Alternatively run `trmnl --setup` in a terminal.",
+      "sensitive": true
+    },
+    "targetLang": {
+      "type": "string",
+      "title": "Target language",
+      "description": "DeepL target code (zh, ja, de, fr, ...). Default zh.",
+      "default": "zh"
+    },
+    "autoPrefix": {
+      "type": "string",
+      "title": "Auto-translate prefix",
+      "description": "Prompts starting with this string are auto-translated by the UserPromptSubmit hook. Empty string disables auto mode.",
+      "default": ">>"
+    },
+    "hookTimeoutMs": {
+      "type": "string",
+      "title": "Hook timeout (ms)",
+      "description": "Max time the auto-translate hook will wait for DeepL before passing the prompt through untranslated.",
+      "default": "2000"
+    },
+    "responseLang": {
+      "type": "string",
+      "title": "Response language",
+      "description": "Language Claude should reply in. Input is translated for token savings; output stays in this language. Default English.",
+      "default": "English"
+    }
+  }
+}

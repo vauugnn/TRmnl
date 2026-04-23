@@ -1,17 +1,11 @@
 {
   "name": "trmnl",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "DeepL-powered prompt translator. /trmnl for on-demand translation; >> prefix auto-translates via UserPromptSubmit hook.",
   "author": { "name": "vauugnn" },
   "homepage": "https://github.com/vauugnn/TRmnl",
   "commands": "./commands",
   "userConfig": {
-    "apiKey": {
-      "type": "string",
-      "title": "DeepL API key",
-      "description": "Your DeepL API key (free tier at deepl.com/your-account/keys). Stored securely in the system keychain. Alternatively run `trmnl --setup` in a terminal.",
-      "sensitive": true
-    },
     "targetLang": {
       "type": "string",
       "title": "Target language",

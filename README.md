@@ -62,10 +62,10 @@ TRmnl also ships as a Claude Code plugin. Write prompts in English, Claude recei
 /plugin install trmnl@trmnl
 ```
 
-After installing, set your DeepL API key:
+After installing, save your DeepL API key (free tier at [deepl.com/your-account/keys](https://www.deepl.com/your-account/keys)):
 
 ```
-/plugin config trmnl
+/tr-setup YOUR_DEEPL_API_KEY
 ```
 
 No CLI needed. If you already have `~/.config/trmnl/config.json` from the REPL, the plugin picks it up automatically.
@@ -74,6 +74,7 @@ No CLI needed. If you already have `~/.config/trmnl/config.json` from the REPL, 
 
 | Command | What it does |
 |---|---|
+| `/tr-setup <key>` | Save your DeepL API key. Run once after installing. |
 | `/tr <text>` | Translate text and submit as prompt. Claude only sees the translation — true token savings. |
 | `/trmnl <text>` | Same as `/tr`. |
 | `/tr-lang <code>` | Set default target language (e.g. `/tr-lang ja`). |

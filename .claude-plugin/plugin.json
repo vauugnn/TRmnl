@@ -5,7 +5,6 @@
   "author": { "name": "vauugnn" },
   "homepage": "https://github.com/vauugnn/TRmnl",
   "commands": "./commands",
-  "hooks": "./hooks/hooks.json",
   "userConfig": {
     "apiKey": {
       "type": "string",
